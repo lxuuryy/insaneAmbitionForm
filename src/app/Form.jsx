@@ -139,7 +139,7 @@ const handleUpload = (event) => {
   return (
     <div>
         <form onSubmit={handleUpload}>
-    <Card className="dark w-[380px] md:w-[550px] mt-[350px]">
+    <Card className="dark w-[380px] md:w-[550px] mt-[150px] mb-[50px]">
       <CardHeader>
         <CardTitle>Podcast Form 🚀</CardTitle>
         <CardDescription>Please fill in all the fields to update the website</CardDescription>
