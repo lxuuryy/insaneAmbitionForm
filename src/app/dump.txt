@@ -1,0 +1,23 @@
+if (updatingDoc) {
+                        await addDoc(podcastRef, {
+                    
+                            title: form.title,
+                            guestName: form.guestName,
+                            episode: form.episode,
+                            videoUrl: form.videoUrl,
+                            appleUrl: form.appleUrl,
+                            spotifyUrl: form.spotifyUrl,
+                            featured: form.featured,
+                            image: hasUndefined ? "" : url,
+                            duration: form.duration
+
+                            
+        
+                        });
+                        setForm({
+                            post: '',
+                        });
+
+                        window.location.reload()
+                    }
+                }
