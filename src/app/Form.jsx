@@ -20,6 +20,8 @@ import { db, storage } from "../app/utils/firebase";
 
 
 export default function CardWithForm() {
+
+    const [isSubmitting, setIsSubmitting] = React.useState(false);
  
 
     const [form, setForm] = React.useState({
@@ -73,7 +75,8 @@ const handleUpload = (event) => {
             );
             setPercent(percent);
             if (percent === 100) {
-                setPercent(0);
+                setIsSubmitting(true);
+                
             }
         },
         async (err) => {
@@ -188,7 +191,17 @@ const handleUpload = (event) => {
       </CardContent>
       <CardFooter className="flex justify-center">
         
-        <Button>Submit</Button>  {percent > 1 && <p> {percent} %</p>}
+      { percent !== 100 ? (
+  <>
+    <Button>Submit</Button>
+    {percent > 1 && <p>{percent}%</p>}
+  </>
+) : (
+  <div>
+    <p>Submitted!</p>
+  </div>
+)}
+
       </CardFooter>
     </Card>
     </form>
